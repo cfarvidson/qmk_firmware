@@ -16,6 +16,9 @@
 #define TAB MO(_TAB)
 #define POWERNAV MO(_POWERNAV)
 #define RIGHT_THUMB LT(_WORDNAV,KC_BSPC)
+// Used to disable some keys
+#define DO_NOTHING MO(_DO_NOTHING)
+
 
 enum combos {
   ZC_CUT,
@@ -64,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC    , KC_1  , KC_2  , KC_3  , KC_4  , KC_5  ,                         TD(TD_6_CAPS) , KC_7  , KC_8    , KC_9   , KC_0     , SE_APOS,
      TAB       , KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  ,                         KC_Y  , KC_U  , KC_I    , KC_O   , KC_P     , KC_LBRC,
      CODING    , KC_A  , KC_S  , KC_D  , MT(MOD_LSFT,KC_F), KC_G  ,              KC_H  ,MT(MOD_LSFT,KC_J), KC_K    , KC_L   , KC_SCLN  , KC_QUOT,
-     KC_LSFT   , KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,                         KC_N  , KC_M  , KC_COMM , KC_DOT , KC_SLSH  , KC_LSFT,
+     DO_NOTHING, KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,                         KC_N  , KC_M  , KC_COMM , KC_DOT , KC_SLSH  ,DO_NOTHING,
                         _______, MO(_ARROWS),                                                    KC_NO   , LSFT(KC_NUHS),
                                       LCTL_T(KC_TAB),RIGHT_THUMB,                 KC_ENT, LT(_MOUSE,KC_SPC),
                                       LM(_APPS,MOD_LGUI),KC_LALT,                 KC_PAST, MEH(KC_NO),
@@ -153,6 +156,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           _______,_______,                  _______,KC_SPC ,
                                           _______,_______,                  _______,_______,
                                           _______,_______,                  _______,_______
+                                 
+  ),
+
+  [_DO_NOTHING] = LAYOUT_5x6(
+     XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                         XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+     XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                         XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+     XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                         XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+     XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                         XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,
+                      XXXXXXX,XXXXXXX,                                                        XXXXXXX,XXXXXXX,
+                                          XXXXXXX,XXXXXXX,                  XXXXXXX,XXXXXXX,
+                                          XXXXXXX,XXXXXXX,                  XXXXXXX,XXXXXXX,
+                                          XXXXXXX,XXXXXXX,                  XXXXXXX,XXXXXXX
                                  
   ),
 
