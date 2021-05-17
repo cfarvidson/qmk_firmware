@@ -1,5 +1,7 @@
 # Dactyl Manuform 5x6 - Arvidson keymap
 
+This is a swedish layout.
+
 How to build:
 
 ```
