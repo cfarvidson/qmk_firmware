@@ -23,8 +23,8 @@ enum combos {
   CV_PASTE,
   XV_PASTE_MATCH,
   ZV_SELECT_ALL,
-  MCOMM_QUES,
-  COMMDOT_EXLM,
+  COMMDOT_QUES,
+  MCOMM_EXLM,
 };
 
 // Hands down combos https://sites.google.com/alanreiser.com/handsdown/home#h.aplo097wq6hh
@@ -33,8 +33,9 @@ const uint16_t PROGMEM copy_combo[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM paste_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM paste_match_combo[] = {KC_X, KC_V, COMBO_END};
 const uint16_t PROGMEM select_all_combo[] = {KC_Z, KC_V, COMBO_END};
-const uint16_t PROGMEM question_mark_combo[] = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM exclamation_mark_combo[] = {KC_COMM, KC_DOT, COMBO_END};
+// Other combos
+const uint16_t PROGMEM question_mark_combo[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM exclamation_mark_combo[] = {KC_M, KC_COMM, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
    [ZC_CUT] = COMBO(cut_combo, LGUI(KC_X)),
@@ -42,8 +43,8 @@ combo_t key_combos[COMBO_COUNT] = {
    [CV_PASTE] = COMBO(paste_combo, LGUI(KC_V)),
    [XV_PASTE_MATCH] = COMBO(paste_match_combo, LGUI(LSA(KC_V))),
    [ZV_SELECT_ALL] = COMBO(select_all_combo, LGUI(KC_A)),
-   [MCOMM_QUES] = COMBO(question_mark_combo, SE_QUES),
-   [COMMDOT_EXLM] = COMBO(exclamation_mark_combo, SE_EXLM)
+   [MCOMM_EXLM] = COMBO(exclamation_mark_combo, SE_EXLM),
+   [COMMDOT_QUES] = COMBO(question_mark_combo, SE_QUES)
 };
 
 
@@ -56,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      CODING    , KC_A  , KC_S  , KC_D  , KC_F  , KC_G  ,                         KC_H  , KC_J  , KC_K    , KC_L   , KC_SCLN  , KC_QUOT,
      KC_LSFT   , KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,                         KC_N  , KC_M  , KC_COMM , KC_DOT , KC_SLSH  , KC_LSFT,
                         _______, MO(_ARROWS),                                                    KC_NO   , LSFT(KC_NUHS),
-                                      LCTL_T(KC_TAB),RIGHT_THUMB,        KC_ENT, LT(_MOUSE,KC_SPC),
+                                      LCTL_T(KC_TAB),RIGHT_THUMB,                 KC_ENT, LT(_MOUSE,KC_SPC),
                                       LM(_APPS,MOD_LGUI),KC_LALT,                 KC_PAST, MEH(KC_NO),
                                       _______, KC_DEL,                            MEH(KC_ESC),_______
   ),
