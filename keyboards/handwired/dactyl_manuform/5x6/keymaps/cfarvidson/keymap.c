@@ -28,9 +28,9 @@ const uint16_t PROGMEM copy_combo[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM paste_combo[] = {KC_C, KC_V, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-   [ZC_CUT] = COMBO(cut_combo, LGUI(KC_C)),
+   [ZC_CUT] = COMBO(cut_combo, LGUI(KC_X)),
    [XC_COPY] = COMBO(copy_combo, LGUI(KC_C)),
-   [CV_PASTE] = COMBO(paste_combo, LGUI(KC_C))
+   [CV_PASTE] = COMBO(paste_combo, LGUI(KC_V))
 };
 
 
