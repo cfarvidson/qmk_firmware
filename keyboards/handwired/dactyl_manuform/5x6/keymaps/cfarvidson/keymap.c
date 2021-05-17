@@ -16,6 +16,18 @@
 #define NUMBERS MO(_NUMBERS)
 #define POWERNAV MO(_POWERNAV)
 
+// Hands down combos https://sites.google.com/alanreiser.com/handsdown/home#h.aplo097wq6hh
+const uint16_t PROGMEM cut_combo[] = {KC_Z, KC_C, COMBO_END};
+combo_t key_combos[COMBO_COUNT] = {COMBO(cut_combo, LGUI(KC_C))};
+
+const uint16_t PROGMEM copy_combo[] = {KC_X, KC_C, COMBO_END};
+combo_t key_combos[COMBO_COUNT] = {COMBO(copy_combo, LGUI(KC_C))};
+
+const uint16_t PROGMEM paste_combo[] = {KC_C, KC_V, COMBO_END};
+combo_t key_combos[COMBO_COUNT] = {COMBO(paste_combo, LGUI(KC_C))};
+
+
+// Layers
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_5x6(
