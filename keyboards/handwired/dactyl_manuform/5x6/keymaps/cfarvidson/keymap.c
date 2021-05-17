@@ -15,6 +15,7 @@
 #define CODING MO(_CODING)
 #define NUMBERS MO(_NUMBERS)
 #define POWERNAV MO(_POWERNAV)
+#define RIGHT_THUMB LT(_WORDNAV,KC_BSPC)
 
 enum combos {
   ZC_CUT,
@@ -49,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      CODING     , KC_A  , KC_S  , KC_D  , KC_F  , KC_G  ,                         KC_H  , KC_J  , KC_K    , KC_L   , KC_SCLN  , KC_QUOT,
      KC_LSFT    , KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,                         KC_N  , KC_M  , KC_COMM , KC_DOT , KC_SLSH  , KC_LSFT,
                       _______, MO(_ARROWS),                                                       KC_NO   , LSFT(KC_NUHS),
-                                      LCTL_T(KC_TAB),LT(_WORDNAV,KC_BSPC),        KC_ENT, LT(_MOUSE,KC_SPC),
+                                      LCTL_T(KC_TAB),RIGHT_THUMB,        KC_ENT, LT(_MOUSE,KC_SPC),
                                       LM(_APPS,MOD_LGUI),KC_LALT,                 KC_PAST, MEH(KC_NO),
                                       _______, KC_DEL,                            MEH(KC_ESC),_______
   ),
