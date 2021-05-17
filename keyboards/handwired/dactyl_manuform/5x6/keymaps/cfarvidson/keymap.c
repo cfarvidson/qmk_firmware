@@ -74,11 +74,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_CODING] = LAYOUT_5x6(
-     _______,_______,_______,_______,_______,_______,                         KC_CAPS      ,LSA(KC_7)   ,_______    ,_______    ,_______    ,_______,
-     _______,_______,HYPR(KC_P1),HYPR(KC_P2),LGUI(KC_X),HYPR(KC_P3),          KC_GRV       ,LALT(KC_2)  ,LSFT(KC_8) ,LSFT(KC_9) ,LSFT(KC_3) ,_______,
-     _______,_______,HYPR(KC_P4),HYPR(KC_P5),LGUI(KC_C),HYPR(KC_P6),          LSFT(KC_GRV) ,LSFT(KC_0)  ,LSA(KC_8)  ,LSA(KC_9)  ,LALT(KC_4) ,KC_NUHS,
-     _______,_______,HYPR(KC_P7),HYPR(KC_P8),LGUI(KC_V),HYPR(KC_P9),          LALT(KC_RBRC),LSFT(KC_EQL),LALT(KC_8) ,LALT(KC_9) ,LALT(KC_7) ,_______,
-                      _______,_______,                                                        LSFT(KC_1),LSFT(KC_MINS),
+     _______,_______,_______     ,_______    ,_______    ,_______,              KC_CAPS      ,LSA(KC_7)    ,_______    ,_______    ,_______    ,_______,
+     _______,_______,HYPR(KC_P1) ,HYPR(KC_P2),_______    ,HYPR(KC_P3),          KC_GRV       ,LALT(KC_2)    ,LSFT(KC_8) ,LSFT(KC_9) ,LSFT(KC_3) ,_______,
+     _______,_______,HYPR(KC_P4) ,HYPR(KC_P5),_______    ,HYPR(KC_P6),          LSFT(KC_GRV) ,LSFT(KC_0)  ,LSA(KC_8)  ,LSA(KC_9)  ,LALT(KC_4) ,KC_NUHS,
+     _______,_______,HYPR(KC_P7) ,HYPR(KC_P8),_______    ,HYPR(KC_P9),          LALT(KC_RBRC),LSFT(KC_EQL),LALT(KC_8) ,LALT(KC_9) ,LALT(KC_7) ,_______,
+                      _______    ,_______    ,                                                        LSFT(KC_1),LSFT(KC_MINS),
                                           LSFT(KC_TAB),LALT(KC_BSPC),         _______,KC_SPC,
                                           KC_NO,RCS(KC_TAB),                  KC_PAST,_______,
                                           KC_NO,RALT(KC_DEL),                 _______,_______
