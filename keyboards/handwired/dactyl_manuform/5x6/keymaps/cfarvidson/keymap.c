@@ -47,12 +47,21 @@ combo_t key_combos[COMBO_COUNT] = {
    [COMMDOT_QUES] = COMBO(question_mark_combo, SE_QUES)
 };
 
+// Tap Dance declarations
+enum {
+    TD_6_CAPS,
+};
+// Tap Dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Escape, twice for Caps Lock
+    [TD_6_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_6, KC_CAPS),
+};
 
 // Layers
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_5x6(
-     KC_ESC    , KC_1  , KC_2  , KC_3  , KC_4  , KC_5  ,                         KC_6  , KC_7  , KC_8    , KC_9   , KC_0     , SE_APOS,
+     KC_ESC    , KC_1  , KC_2  , KC_3  , KC_4  , KC_5  ,                         TD(TD_6_CAPS) , KC_7  , KC_8    , KC_9   , KC_0     , SE_APOS,
      TAB       , KC_Q  , KC_W  , KC_E  , KC_R  , KC_T  ,                         KC_Y  , KC_U  , KC_I    , KC_O   , KC_P     , KC_LBRC,
      CODING    , KC_A  , KC_S  , KC_D  , MT(MOD_LSFT,KC_F), KC_G  ,              KC_H  ,MT(MOD_LSFT,KC_J), KC_K    , KC_L   , KC_SCLN  , KC_QUOT,
      KC_LSFT   , KC_Z  , KC_X  , KC_C  , KC_V  , KC_B  ,                         KC_N  , KC_M  , KC_COMM , KC_DOT , KC_SLSH  , KC_LSFT,
@@ -88,11 +97,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_CODING] = LAYOUT_5x6(
-     _______,_______,_______     ,_______    ,_______    ,_______,              KC_CAPS      ,LSA(KC_7)    ,_______    ,_______    ,_______    ,_______,
-     _______,_______,HYPR(KC_P1) ,HYPR(KC_P2),KC_NO      ,HYPR(KC_P3),          KC_GRV       ,LALT(KC_2)    ,LSFT(KC_8) ,LSFT(KC_9) ,LSFT(KC_3) ,_______,
-     _______,_______,HYPR(KC_P4) ,HYPR(KC_P5),KC_NO      ,HYPR(KC_P6),          LSFT(KC_GRV) ,LSFT(KC_0)  ,LSA(KC_8)  ,LSA(KC_9)  ,LALT(KC_4) ,KC_NUHS,
-     _______,_______,HYPR(KC_P7) ,HYPR(KC_P8),KC_NO      ,HYPR(KC_P9),          LALT(KC_RBRC),LSFT(KC_EQL),LALT(KC_8) ,LALT(KC_9) ,LALT(KC_7) ,_______,
-                      _______    ,_______    ,                                                        LSFT(KC_1),LSFT(KC_MINS),
+     _______,_______,_______     ,_______    ,_______    ,_______,              KC_CAPS      ,LSA(KC_7)    ,_______     ,_______      ,_______    ,_______,
+     _______,_______,HYPR(KC_P1) ,HYPR(KC_P2),KC_NO      ,HYPR(KC_P3),          KC_GRV       ,LALT(KC_2)   ,LSFT(KC_8)  ,LSFT(KC_9)   ,LSFT(KC_3) ,_______,
+     _______,_______,HYPR(KC_P4) ,HYPR(KC_P5),KC_NO      ,HYPR(KC_P6),          LSFT(KC_GRV) ,LSFT(KC_0)   ,LSA(KC_8)   ,LSA(KC_9)    ,LALT(KC_4) ,KC_NUHS,
+     _______,_______,HYPR(KC_P7) ,HYPR(KC_P8),KC_NO      ,HYPR(KC_P9),          LALT(KC_RBRC),LSFT(KC_EQL) ,LALT(KC_8)  ,LALT(KC_9)   ,LALT(KC_7) ,_______,
+                      _______    ,_______    ,                                                              LSFT(KC_1)  ,LSFT(KC_MINS),
                                           LSFT(KC_TAB),LALT(KC_BSPC),         _______,KC_SPC,
                                           KC_NO,RCS(KC_TAB),                  KC_PAST,_______,
                                           KC_NO,RALT(KC_DEL),                 _______,_______
