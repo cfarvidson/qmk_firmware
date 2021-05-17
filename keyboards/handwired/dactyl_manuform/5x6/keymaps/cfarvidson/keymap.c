@@ -11,6 +11,7 @@
 #define _WORDNAV 5
 #define _POWERNAV 6
 #define _APPS 7
+#define _DO_NOTHING 8
 
 #define CODING MO(_CODING)
 #define TAB MO(_TAB)
