@@ -101,11 +101,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_CODING] = LAYOUT_5x6(
-     _______,_______,_______     ,_______    ,_______    ,_______,              _______     ,SE_BSLS_MAC ,_______     ,_______      ,_______     ,SE_ACUT,
-     _______,_______,HYPR(KC_P1) ,HYPR(KC_P2),KC_NO      ,HYPR(KC_P3),          SE_LABK_MAC ,SE_AT_MAC   ,SE_LPRN_MAC ,SE_RPRN_MAC  ,SE_HASH_MAC ,_______,
-     _______,_______,HYPR(KC_P4) ,HYPR(KC_P5),KC_NO      ,HYPR(KC_P6),          SE_RABK_MAC ,SE_EQL      ,SE_LCBR_MAC ,SE_RCBR_MAC  ,SE_DLR_MAC  ,SE_QUOT,
-     _______,_______,HYPR(KC_P7) ,HYPR(KC_P8),KC_NO      ,HYPR(KC_P9),          SE_TILD_MAC ,SE_GRV      ,SE_LBRC_MAC ,SE_RBRC_MAC  ,SE_PIPE_MAC ,_______,
-                      _______    ,_______    ,                                                            _______     ,_______,
+     _______,_______,_______     ,_______    ,_______ ,_______,                   _______     , SE_BSLS_MAC , _______     , _______     , _______     ,SE_ACUT,
+     _______,_______,HYPR(KC_P1) ,HYPR(KC_P2),XXXXXXX ,HYPR(KC_P3),               SE_LABK_MAC , SE_AT_MAC   , SE_LPRN_MAC , SE_RPRN_MAC , SE_HASH_MAC ,_______,
+     _______,_______,HYPR(KC_P4) ,HYPR(KC_P5),XXXXXXX      ,HYPR(KC_P6),          SE_RABK_MAC , SE_EQL      , SE_LCBR_MAC , SE_RCBR_MAC , SE_DLR_MAC  ,SE_QUOT,
+     _______,_______,HYPR(KC_P7) ,HYPR(KC_P8),XXXXXXX      ,HYPR(KC_P9),          SE_TILD_MAC , SE_GRV      , SE_LBRC_MAC , SE_RBRC_MAC , SE_PIPE_MAC ,_______,
+                      _______    ,_______    ,                                                                _______     ,_______,
                                           LSFT(KC_TAB),LALT(KC_BSPC),         _______,KC_SPC,
                                           KC_NO,RCS(KC_TAB),                  KC_PAST,_______,
                                           KC_NO,RALT(KC_DEL),                 _______,_______
