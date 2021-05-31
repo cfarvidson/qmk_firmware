@@ -1,7 +1,7 @@
 /* A standard layout for the Dactyl Manuform 5x6 Keyboard */ 
 
 #include QMK_KEYBOARD_H
-#include "keymap_swedish_osx_iso.h"
+#include "keymap_swedish_osx_ansi.h"
 
 #define _QWERTY 0
 #define _MOUSE 1
