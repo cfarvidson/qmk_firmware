@@ -44,7 +44,6 @@
 #define LOCKING_RESYNC_ENABLE
 #define USB_POLLING_INTERVAL_MS 1
 #define MASTER_LEFT
-#define COMBO_COUNT 7
 #define PERMISSIVE_HOLD
 
 /* mouse config */
