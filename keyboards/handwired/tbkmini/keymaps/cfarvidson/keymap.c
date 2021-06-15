@@ -79,11 +79,22 @@ bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+
+// Tap Dance declarations
+enum {
+    KC_Y_CAPS,
+};
+// Tap Dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Escape, twice for Caps Lock
+    [KC_Y_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_Y, KC_CAPS),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       TAB,       KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  SE_ARNG,
+       TAB,       KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                    TD(KC_Y_CAPS),KC_U,    KC_I,    KC_O,   KC_P,  SE_ARNG,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       CODING,    KC_A,    KC_S,    KC_D ,    KC_F,    KC_G,                       KC_H, RSFT_T(KC_J), KC_K,    KC_L,SE_ODIA , SE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
