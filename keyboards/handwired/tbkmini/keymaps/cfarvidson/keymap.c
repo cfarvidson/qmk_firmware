@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QWERTY] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       TAB,       KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                    TD(KC_Y_CAPS),KC_U,    KC_I,    KC_O,   KC_P,  SE_ARNG,
+LT(_TAB,KC_ESC),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                    TD(KC_Y_CAPS),KC_U,    KC_I,    KC_O,   KC_P,  SE_ARNG,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       CODING,    KC_A,    KC_S,    KC_D ,    KC_F,    KC_G,                       KC_H, RSFT_T(KC_J), KC_K,    KC_L,SE_ODIA , SE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -138,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       RESET  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  KC_P1 ,  KC_P2 ,  KC_P3 , XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                    LGUI(KC_NUBS), XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, KC_P0
+                                    LGUI(KC_NUBS), XXXXXXX,KC_DELETE,   XXXXXXX, XXXXXXX, KC_P0
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -150,7 +150,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX,KC_DELETE,   XXXXXXX, XXXXXXX, XXXXXXX
+                                          XXXXXXX, XXXXXXX,XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
