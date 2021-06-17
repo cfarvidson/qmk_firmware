@@ -22,16 +22,16 @@
 #define _MOUSE 1
 #define _CODING 2
 #define _TAB 4
-#define _TOP_ROW 5
-#define _WORDNAV 6
-#define _POWERNAV 7
-#define _ARROWS 8
-#define _PWRGUI 9
+#define _TOPROW 5
+#define _SHIFTED 6
+#define _WORDNAV 7
+#define _POWERNAV 8
+#define _ARROWS 9
+#define _PWRGUI 10
 
 
 #define CODING MO(_CODING)
 #define TAB MO(_TAB)
-#define TOP_ROW MO(_TOP_ROW)
 #define POWERNAV MO(_POWERNAV)
 #define PWRGUI LM(_PWRGUI,MOD_LGUI)
 #define SCRNSHOT S(G(KC_4))
@@ -103,7 +103,7 @@ LT(_TAB,KC_ESC),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                    T
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM , SE_DOT,SE_MINS , KC_LSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                        LCTL_T(KC_TAB),LT(_WORDNAV,KC_BSPC), PWRGUI,    TOP_ROW, KC_ENT , LT(_MOUSE,KC_SPC)
+                        LCTL_T(KC_TAB),LT(_WORDNAV,KC_BSPC), PWRGUI,   MO(_TOPROW),LT(_SHIFTED,KC_ENT),LT(_MOUSE,KC_SPC)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -112,9 +112,9 @@ LT(_TAB,KC_ESC),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                    T
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,SCRNSHOT, SCRNVID,                      SE_LABK, SE_AT  , SE_LPRN, SE_RPRN, SE_HASH, SE_ACUT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      SE_RABK, SE_EQL , SE_LCBR, SE_RCBR, SE_DLR , SE_QUOT,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,HYPR(KC_P6),                   SE_RABK, SE_EQL , SE_LCBR, SE_RCBR, SE_DLR , SE_QUOT,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      SE_TILD, SE_GRV , SE_LBRC, SE_RBRC, SE_PIPE, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,HYPR(KC_P9),                   SE_TILD, SE_GRV , SE_LBRC, SE_RBRC, SE_PIPE, SE_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                       LSFT(KC_TAB),LALT(KC_BSPC), LALT(KC_DELETE),      SE_ASTR, XXXXXXX, KC_SPC
                                       //`--------------------------'  `--------------------------'
@@ -122,7 +122,7 @@ LT(_TAB,KC_ESC),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                    T
 
   [_TAB] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,MEH(KC_Q),MEH(KC_W),MEH(KC_E),MEH(KC_R),MEH(KC_T),                 XXXXXXX,  KC_P7 ,  KC_P8 ,  KC_P9 , XXXXXXX, XXXXXXX,
+      XXXXXXX,MEH(KC_Q),MEH(KC_W),MEH(KC_E),MEH(KC_R),SE_BSLS,                   XXXXXXX,  KC_P7 ,  KC_P8 ,  KC_P9 , XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,MEH(KC_A),MEH(KC_S),MEH(KC_D),MEH(KC_F),MEH(KC_G),                 XXXXXXX,  KC_P4 ,  KC_P5 ,  KC_P6 , XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -132,9 +132,21 @@ LT(_TAB,KC_ESC),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                    T
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [_TOP_ROW] = LAYOUT_split_3x6_3(
+  [_TOPROW] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_ESC , KC_1   ,  KC_2  ,  KC_3  ,  KC_4  ,  KC_5  ,                       KC_7  ,  KC_7  ,  KC_8  ,  KC_9  ,  KC_0  , SE_PLUS,
+      KC_ESC , KC_1   ,  KC_2  ,  KC_3  ,  KC_4  ,  KC_5  ,                       KC_6  ,  KC_7  ,  KC_8  ,  KC_9  ,  KC_0  , SE_PLUS,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LSFT,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          XXXXXXX, XXXXXXX,KC_LGUI,   XXXXXXX, XXXXXXX, XXXXXXX
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [_SHIFTED] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      KC_ESC , S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5),                     S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), SE_PLUS,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
