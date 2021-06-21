@@ -116,7 +116,7 @@ LT(_TAB,KC_ESC),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                    T
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,HYPR(KC_P9),                   SE_TILD, SE_GRV , SE_LBRC, SE_RBRC, SE_PIPE, SE_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                      LSFT(KC_TAB),LALT(KC_BSPC), LALT(KC_DELETE),      SE_ASTR, XXXXXXX, KC_SPC
+                              LSFT(KC_TAB),A(KC_BSPC), A(KC_DELETE),    SE_ASTR, XXXXXXX, KC_SPC
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -128,7 +128,7 @@ LT(_TAB,KC_ESC),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                    T
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       RESET  , XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,  KC_P1 ,  KC_P2 ,  KC_P3 , XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                    LGUI(KC_NUBS), XXXXXXX,KC_DELETE,   XXXXXXX, XXXXXXX, KC_P0
+                                 LGUI(KC_NUBS),G(KC_BSPC),KC_DELETE,   XXXXXXX, XXXXXXX, KC_P0
                                       //`--------------------------'  `--------------------------'
   ),
 
