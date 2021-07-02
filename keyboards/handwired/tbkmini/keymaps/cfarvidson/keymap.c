@@ -16,7 +16,7 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "keymap_swedish_osx_ansi.h"
+#include "keymap_swedish_pro_osx_ansi.h"
 
 #define _QWERTY 0
 #define _MOUSE 1
