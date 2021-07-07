@@ -28,8 +28,9 @@ RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 SPLIT_KEYBOARD = yes
-TAP_DANCE_ENABLE = yes
+TAP_DANCE_ENABLE = no
 LTO_ENABLE = yes
+AUTO_SHIFT_ENABLE = yes # Auto Shift
 
 AUDIO_SUPPORTED = no
 RGB_MATRIX_SUPPORTED = no

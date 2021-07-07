@@ -20,7 +20,10 @@
 
 #define _BASE 0
 #define _NAV 1
-#define _MOUSE 1
+#define _MOUSE 2
+#define _MEDIA 3
+#define _NUM 4
+#define _RESET 5
 
 
 enum combos {
@@ -49,38 +52,38 @@ combo_t key_combos[COMBO_COUNT] = {
 #define HC_A LGUI_T(KC_A)
 #define HC_S LALT_T(KC_S)
 #define HC_D LCTL_T(KC_D)
-#define HC_F LSFT_T(KC_F)
+#define HC_F RSFT_T(KC_F)
 
 #define HC_J RSFT_T(KC_J)
-#define HC_K RCTL_T(KC_J)
+#define HC_K RCTL_T(KC_K)
 #define HC_L RALT_T(KC_L)
 #define HC_ODIA RGUI_T(SE_ODIA)
 
-// Tap Dance declarations
-enum {
-    TD_XX_RST,
-    TD_ARNG_RST
-};
+// // Tap Dance declarations
+// enum {
+//     TD_XX_RST,
+//     TD_ARNG_RST
+// };
 
-// Tap Dance definitions
-qk_tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_XX_RST] = ACTION_TAP_DANCE_DOUBLE(XXXXXXX, RESET),
-    [TD_ARNG_RST] = ACTION_TAP_DANCE_DOUBLE(SE_ARNG, RESET),
-};
+// // Tap Dance definitions
+// qk_tap_dance_action_t tap_dance_actions[] = {
+//     // Tap once for Escape, twice for Caps Lock
+//     [TD_XX_RST] = ACTION_TAP_DANCE_DOUBLE(XXXXXXX, RESET),
+//     [TD_ARNG_RST] = ACTION_TAP_DANCE_DOUBLE(SE_ARNG, RESET),
+// };
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- TD(TD_XX_RST),   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,TD(TD_ARNG_RST),
+   MO(_RESET),   KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                          KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SE_ARNG,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    HC_A,    HC_S,    HC_D,    HC_F,    KC_G,                         KC_H,    HC_J,    HC_K,    HC_L, HC_ODIA, SE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM, SE_DOT , SE_MINS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                           KC_DEL, KC_BSPC,KC_ENTER,   LT(_MOUSE, KC_TAB) ,LT(_NAV, KC_SPACE),KC_ESCAPE
+                                  KC_DEL, LT(_NUM,KC_BSPC),KC_ENTER,   LT(_MOUSE, KC_TAB) ,LT(_NAV, KC_SPACE), LT(_MEDIA,KC_ESCAPE)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -103,9 +106,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_WH_D, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,                      XXXXXXX, KC_RSFT,KC_RCTRL, KC_RALT, KC_RGUI, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           KC_BTN3, KC_BTN2, KC_BTN1,    XXXXXXX, XXXXXXX, XXXXXXX
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [_MEDIA] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX, XXXXXXX, XXXXXXX,KC_VOLU, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, KC_MPRV,KC_VOLD, KC_MNXT, XXXXXXX,                      XXXXXXX, KC_RSFT,KC_RCTRL, KC_RALT, KC_RGUI, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          KC_MUTE, KC_MPLY, KC_MSTP,    XXXXXXX, XXXXXXX, XXXXXXX
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [_NUM] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      SE_LBRC,    KC_7,    KC_8,    KC_9, SE_RBRC, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, KC_LGUI, KC_LALT, KC_LCTRL,KC_RSFT, XXXXXXX,                       SE_EQL,    KC_4,    KC_5,    KC_6, SE_SCLN, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                        SE_BSLS,    KC_1,    KC_2,    KC_3,  SE_GRV, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    SE_MINS,    KC_0, SE_DOT
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [_RESET] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
