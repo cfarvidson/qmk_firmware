@@ -60,6 +60,12 @@ combo_t key_combos[COMBO_COUNT] = {
 #define HC_L RALT_T(KC_L)
 #define HC_ODIA RGUI_T(SE_ODIA)
 
+#define NUM_BSPC LT(_NUM,KC_BSPC)
+#define MOUSE_TAB LT(_MOUSE, KC_TAB)
+#define NAV_SPACE LT(_NAV, KC_SPACE)
+#define MEDIA_ESCAPE LT(_MEDIA,KC_ESCAPE)
+#define SYM_ENTER LT(_SYM,KC_ENTER)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT_split_3x6_3(
@@ -70,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM, SE_DOT , SE_MINS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                  KC_DEL, LT(_NUM,KC_BSPC),KC_ENTER,   LT(_MOUSE, KC_TAB) ,LT(_NAV, KC_SPACE), LT(_MEDIA,KC_ESCAPE)
+                                        KC_DEL, NUM_BSPC ,SYM_ENTER,   MOUSE_TAB, NAV_SPACE, MEDIA_ESCAPE
                                       //`--------------------------'  `--------------------------'
 
   ),
