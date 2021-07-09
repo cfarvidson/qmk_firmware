@@ -61,9 +61,9 @@ combo_t key_combos[COMBO_COUNT] = {
 #define HC_ODIA RGUI_T(SE_ODIA)
 
 #define NUM_BSPC LT(_NUM,KC_BSPC)
-#define MOUSE_SPACE LT(_MOUSE, KC_SPC)
-#define NAV_ENTER LT(_NAV, KC_ENT)
-#define MEDIA_DEL LT(_MEDIA,KC_DEL)
+#define MOUSE_DEL LT(_MOUSE, KC_DELETE)
+#define NAV_SPACE LT(_NAV, KC_SPACE)
+#define MEDIA_ENTER LT(_MEDIA,KC_ENTER)
 #define SYM_TAB LT(_SYM,KC_TAB)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM, SE_DOT , SE_MINS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        SYM_TAB, NUM_BSPC ,XXXXXXX,    MEDIA_DEL, NAV_ENTER, MOUSE_SPACE
+                                        SYM_TAB, NUM_BSPC ,  KC_DEL,    MEDIA_ENTER, NAV_SPACE, MOUSE_DEL
                                       //`--------------------------'  `--------------------------'
 
   ),
