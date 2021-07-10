@@ -73,6 +73,32 @@ combo_t key_combos[COMBO_COUNT] = {
 #define MEDIA_ENTER LT(_MEDIA,KC_ENTER)
 #define SYM_DEL LT(_SYM,KC_DEL)
 
+// Fixes the issue when pressing homekeys fast
+bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LGUI_T(KC_A):
+            return true;
+        case LALT_T(KC_S):
+            return true;
+        case LCTL_T(KC_D):
+            return true;
+        case RSFT_T(KC_F):
+            return true;
+
+        case RSFT_T(KC_J):
+            return true;
+        case RCTL_T(KC_K):
+            return true;
+        case RALT_T(KC_L):
+            return true;
+        case RGUI_T(SE_ODIA):
+            return true;
+
+        default:
+            return false;
+    }
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT_split_3x6_3(
