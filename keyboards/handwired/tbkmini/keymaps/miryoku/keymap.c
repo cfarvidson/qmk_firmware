@@ -99,6 +99,17 @@ bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LALT_T(KC_S):
+            return TAPPING_TERM + 150;
+        case RALT_T(KC_L):
+            return TAPPING_TERM + 150;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT_split_3x6_3(

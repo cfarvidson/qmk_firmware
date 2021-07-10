@@ -19,7 +19,8 @@
 
 // default but used in macros
 #undef TAPPING_TERM
-#define TAPPING_TERM 350
+#define TAPPING_TERM 200
+#define TAPPING_TERM_PER_KEY
 
 #define COMBO_COUNT 7
 // Prevent normal rollover on alphas from accidentally triggering mods.
