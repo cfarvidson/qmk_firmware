@@ -33,6 +33,8 @@ enum combos {
   CV_PASTE,
   XV_PASTE_MATCH,
   ZV_SELECT_ALL,
+  COMMDOT_QUES,
+  MCOMM_EXLM,
 };
 
 // Hands down combos https://sites.google.com/alanreiser.com/handsdown/home#h.aplo097wq6hh
@@ -41,13 +43,18 @@ const uint16_t PROGMEM copy_combo[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM paste_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM paste_match_combo[] = {KC_X, KC_V, COMBO_END};
 const uint16_t PROGMEM select_all_combo[] = {KC_Z, KC_V, COMBO_END};
+// Other combos
+const uint16_t PROGMEM question_mark_combo[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM exclamation_mark_combo[] = {KC_M, KC_COMM, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
    [ZC_CUT] = COMBO(cut_combo, LGUI(KC_X)),
    [XC_COPY] = COMBO(copy_combo, LGUI(KC_C)),
    [CV_PASTE] = COMBO(paste_combo, LGUI(KC_V)),
    [XV_PASTE_MATCH] = COMBO(paste_match_combo, LGUI(LSA(KC_V))),
-   [ZV_SELECT_ALL] = COMBO(select_all_combo, LGUI(KC_A))
+   [ZV_SELECT_ALL] = COMBO(select_all_combo, LGUI(KC_A)),
+   [MCOMM_EXLM] = COMBO(exclamation_mark_combo, SE_EXLM),
+   [COMMDOT_QUES] = COMBO(question_mark_combo, SE_QUES)
 };
 
 #define HC_A LGUI_T(KC_A)
