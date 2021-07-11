@@ -68,13 +68,6 @@ combo_t key_combos[COMBO_COUNT] = {
 #define HC_L RALT_T(KC_L)
 #define HC_ODIA RGUI_T(SE_ODIA)
 
-#define NUM_BSPC LT(_NUM,KC_BSPC)
-#define MOUSE_ESC LT(_MOUSE, KC_ESCAPE)
-#define NAV_SPACE LT(_NAV, KC_SPACE)
-#define MEDIA_ENTER LT(_MEDIA,KC_ENTER)
-#define SYM_DEL LT(_SYM,KC_DEL)
-#define FUN_TAB LT(_FUN,KC_TAB)
-
 // Fixes the issue when pressing homekeys fast
 bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -122,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM, SE_DOT , SE_MINS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        SYM_DEL, NUM_BSPC , FUN_TAB,    MEDIA_ENTER, NAV_SPACE, MOUSE_ESC
+                   LT(_SYM,KC_TAB),LT(_NUM,KC_BSPC),LT(_FUN,KC_DEL),   LT(_MEDIA,KC_ESCAPE),LT(_NAV, KC_ENTER),LT(_MOUSE, KC_SPACE)
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -135,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                           KC_DEL, KC_BSPC,KC_TAB,   XXXXXXX, XXXXXXX, XXXXXXX
+                                           KC_TAB, KC_BSPC,  KC_DEL,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
   ),
 
