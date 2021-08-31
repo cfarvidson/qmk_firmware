@@ -80,38 +80,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-// Fixes the issue when pressing some of the homekeys fast
-bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HC_A:
-            return true;
-        case HC_S:
-            return true;
-        case HC_D:
-            return true;
-        case HC_F:
-            return true;
-
-        case HC_J:
-            return true;
-        case HC_K:
-            return true;
-        case HC_L:
-            return true;
-        case HC_ODIA:
-            return true;
-
-        case LT(_FUN,KC_DEL):
-            return true;
-
-        case LT(_NAV, KC_SPACE):
-            return true;
-
-        default:
-            return false;
-    }
-}
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_BASE] = LAYOUT_split_3x6_3(
