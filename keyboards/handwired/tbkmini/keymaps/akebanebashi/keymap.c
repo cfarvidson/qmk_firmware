@@ -71,10 +71,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM + 150;
         case HC_F:
             // Shift
-            return TAPPING_TERM - 55;
+            return 145;
         case HC_J:
             // Shift
-            return TAPPING_TERM - 55;
+            return 145;
         default:
             return TAPPING_TERM;
     }
