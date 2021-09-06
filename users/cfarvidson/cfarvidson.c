@@ -15,6 +15,27 @@ combo_t key_combos[COMBO_COUNT] = {
 [ZV_SELECT_ALL] = COMBO(select_all_combo, LGUI(KC_A)),
 };
 
+#define SHIFT_TAPPING_TERM 145
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HC_S:
+            // Alt
+            return TAPPING_TERM + 150;
+        case HC_L:
+            // Alt
+            return TAPPING_TERM + 150;
+        case HC_F:
+            // Shift
+            return SHIFT_TAPPING_TERM;
+        case HC_J:
+            // Shift
+            return SHIFT_TAPPING_TERM;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
