@@ -16,15 +16,17 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 #define SHIFT_TAPPING_TERM 145
+#define ALT_TAPPING_TERM 350
+
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case HC_S:
             // Alt
-            return TAPPING_TERM + 150;
+            return ALT_TAPPING_TERM;
         case HC_L:
             // Alt
-            return TAPPING_TERM + 150;
+            return ALT_TAPPING_TERM;
         case HC_F:
             // Shift
             return SHIFT_TAPPING_TERM;
