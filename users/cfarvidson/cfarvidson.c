@@ -16,7 +16,7 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 #define SHIFT_TAPPING_TERM 145
-#define ALT_TAPPING_TERM 350
+#define ALT_TAPPING_TERM 300
 
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
