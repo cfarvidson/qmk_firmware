@@ -26,3 +26,7 @@ TBK mini:
 Dactyl Manuform
 
     util/docker_build.sh handwired/dactyl_manuform/5x6:cfarvidson
+
+Corne (with elite-c)
+
+    MAKEFLAGS="ELITE_C=yes" util/docker_build.sh crkbd/rev1/common:cfarvidson

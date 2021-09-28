@@ -11,3 +11,8 @@ SLEEP_LED_ENABLE = no       # Breathing sleep LED during USB suspend
 NKRO_ENABLE = yes            # USB Nkey Rollover
 AUTO_SHIFT_ENABLE = yes # Auto Shift
 COMBO_ENABLE = yes
+
+ELITE_C ?= no
+ifeq ($(strip $(ELITE_C)), yes)
+	BOOTLOADER = atmel-dfu
+endif

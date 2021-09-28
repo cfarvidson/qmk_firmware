@@ -19,6 +19,8 @@
 #define NO_AUTO_SHIFT_ALPHA
 #define AUTO_SHIFT_TIMEOUT TAPPING_TERM
 
+#define EE_HANDS
+
 /* mouse config */
 #define MOUSEKEY_INTERVAL       20
 #define MOUSEKEY_DELAY          0
