@@ -15,12 +15,15 @@ combo_t key_combos[COMBO_COUNT] = {
 [ZV_SELECT_ALL] = COMBO(select_all_combo, LGUI(KC_A)),
 };
 
-#define SHIFT_TAPPING_TERM 145
+#define SHIFT_TAPPING_TERM 155
 #define ALT_TAPPING_TERM 300
 
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case HC_A:
+            // Command
+            return ALT_TAPPING_TERM;
         case HC_S:
             // Alt
             return ALT_TAPPING_TERM;
