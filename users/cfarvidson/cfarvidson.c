@@ -15,7 +15,7 @@ combo_t key_combos[COMBO_COUNT] = {
 [ZV_SELECT_ALL] = COMBO(select_all_combo, LGUI(KC_A)),
 };
 
-#define SHIFT_TAPPING_TERM 140
+#define SHIFT_TAPPING_TERM 135
 #define ALT_TAPPING_TERM 300
 
 
