@@ -1,4 +1,4 @@
-Copyright 2021 Carl-Fredrik Arvidson carl-fredrik@arvidson.io @cfarvidson
+Copyright 2022 Carl-Fredrik Arvidson carl-fredrik@arvidson.io @cfarvidson
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
