@@ -16,3 +16,9 @@ ELITE_C ?= no
 ifeq ($(strip $(ELITE_C)), yes)
 	BOOTLOADER = atmel-dfu
 endif
+
+
+PRO_MICRO ?= no
+ifeq ($(strip $(PRO_MICRO)), yes)
+	BOOTLOADER = atmel-dfu
+endif
