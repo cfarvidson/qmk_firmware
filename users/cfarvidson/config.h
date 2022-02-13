@@ -21,6 +21,8 @@
 
 #define EE_HANDS
 
+#define PERMISSIVE_HOLD
+
 /* mouse config */
 #define MOUSEKEY_INTERVAL       20
 #define MOUSEKEY_DELAY          0
