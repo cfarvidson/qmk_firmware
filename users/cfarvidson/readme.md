@@ -19,13 +19,13 @@ Ergodox EZ:
 
     util/docker_build.sh ergodox_ez:cfarvidson
 
-TBK mini:
+TBK mini (Handwired):
 
     util/docker_build.sh handwired/tbkmini:cfarvidson
 
 TBK mini (Hotswap):
 
-    MAKEFLAGS="ELITE_C=yes" util/docker_build.sh handwired/tbkmini:cfarvidson
+    util/docker_build.sh bastardkb/tbkmini:cfarvidson
 
 Dactyl Manuform
 
