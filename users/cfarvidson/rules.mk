@@ -12,6 +12,12 @@ NKRO_ENABLE = yes            # USB Nkey Rollover
 AUTO_SHIFT_ENABLE = yes # Auto Shift
 COMBO_ENABLE = yes
 
+# Disable lighting since you don't ever use on any keyboard
+AUDIO_SUPPORTED = no
+RGB_MATRIX_SUPPORTED = no
+BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
+RGBLIGHT_ENABLE = no       # Enable keyboard RGB underglow
+
 ELITE_C ?= no
 ifeq ($(strip $(ELITE_C)), yes)
 	BOOTLOADER = atmel-dfu
