@@ -29,3 +29,9 @@
 #define MOUSEKEY_TIME_TO_MAX    60
 #define MOUSEKEY_MAX_SPEED      7
 #define MOUSEKEY_WHEEL_DELAY 0
+
+
+#if defined(COL2ROW)
+#    undef DIODE_DIRECTION
+#    define DIODE_DIRECTION COL2ROW
+#endif

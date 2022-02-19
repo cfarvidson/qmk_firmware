@@ -28,3 +28,8 @@ PRO_MICRO ?= no
 ifeq ($(strip $(PRO_MICRO)), yes)
 	BOOTLOADER = atmel-dfu
 endif
+
+COL2ROW ?= no
+ifeq ($(strip $(COL2ROW)), yes)
+	COL2ROW = yes
+endif
