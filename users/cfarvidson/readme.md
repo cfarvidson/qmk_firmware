@@ -25,7 +25,8 @@ TBK mini (Handwired):
 
 TBK mini (Hotswap):
 
-    util/docker_build.sh bastardkb/tbkmini:cfarvidson
+    MAKEFLAGS="ELITE_C=yes" util/docker_build.sh handwired/tbkmini:cfarvidson
+
 
 Dactyl Manuform
 
