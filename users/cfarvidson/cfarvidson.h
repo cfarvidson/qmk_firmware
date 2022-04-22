@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "keymap_swedish_pro_osx_ansi.h"
+#include "keymap_swedish_pro_osx_iso.h"
 
 #define _BASE 0
 #define _NAV 1
@@ -8,6 +8,7 @@
 #define _NUM 4
 #define _SYM 5
 #define _FUN 6
+#define _Q 7
 
 
 enum combos {
@@ -27,3 +28,5 @@ enum combos {
 #define HC_K RCTL_T(KC_K)
 #define HC_L RALT_T(KC_L)
 #define HC_ODIA RGUI_T(SE_ODIA)
+
+#define CC_Q LT(_Q,KC_Q)
