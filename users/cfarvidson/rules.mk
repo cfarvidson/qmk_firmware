@@ -9,7 +9,7 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 SLEEP_LED_ENABLE = no       # Breathing sleep LED during USB suspend
 # if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 NKRO_ENABLE = yes            # USB Nkey Rollover
-AUTO_SHIFT_ENABLE = yes # Auto Shift
+AUTO_SHIFT_ENABLE = no # Auto Shift
 COMBO_ENABLE = yes
 
 # Disable lighting since you don't ever use on any keyboard
@@ -18,18 +18,18 @@ RGB_MATRIX_SUPPORTED = no
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no       # Enable keyboard RGB underglow
 
-ELITE_C ?= no
-ifeq ($(strip $(ELITE_C)), yes)
-	BOOTLOADER = atmel-dfu
-endif
+# ELITE_C ?= no
+# ifeq ($(strip $(ELITE_C)), yes)
+# 	BOOTLOADER = atmel-dfu
+# endif
 
 
-PRO_MICRO ?= no
-ifeq ($(strip $(PRO_MICRO)), yes)
-	BOOTLOADER = atmel-dfu
-endif
+# PRO_MICRO ?= no
+# ifeq ($(strip $(PRO_MICRO)), yes)
+# 	BOOTLOADER = atmel-dfu
+# endif
 
-COL2ROW ?= no
-ifeq ($(strip $(COL2ROW)), yes)
-	COL2ROW = yes
-endif
+# COL2ROW ?= no
+# ifeq ($(strip $(COL2ROW)), yes)
+# 	COL2ROW = yes
+# endif

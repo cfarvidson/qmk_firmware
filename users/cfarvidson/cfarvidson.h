@@ -1,5 +1,4 @@
-#include QMK_KEYBOARD_H
-#include "keymap_swedish_pro_osx_iso.h"
+#include "keymap_swedish_pro_mac_iso.h"
 
 #define _BASE 0
 #define _NAV 1
@@ -9,6 +8,7 @@
 #define _SYM 5
 #define _FUN 6
 #define _Q 7
+#define LAYER_POINTER 8
 
 
 enum combos {
