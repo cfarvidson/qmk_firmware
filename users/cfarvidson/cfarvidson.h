@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "keymap_swedish_pro_osx_iso.h"
+#include "keymap_swedish_osx_iso.h"
 
 #define _BASE 0
 #define _NAV 1
