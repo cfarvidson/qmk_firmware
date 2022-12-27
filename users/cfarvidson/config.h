@@ -35,3 +35,11 @@
 #    undef DIODE_DIRECTION
 #    define DIODE_DIRECTION COL2ROW
 #endif
+
+
+/* keyboard config windows and mac */
+#define MAC 1
+#if defined(WIN)
+#    undef MAC
+#    define MAC 0
+#endif

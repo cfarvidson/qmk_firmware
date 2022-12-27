@@ -19,17 +19,13 @@ Ergodox EZ:
 
     util/docker_build.sh ergodox_ez:cfarvidson
 
-TBK mini (Handwired):
-
-    util/docker_build.sh handwired/tbkmini:cfarvidson
-
 TBK mini (Hotswap):
 
-    MAKEFLAGS="ELITE_C=yes" util/docker_build.sh handwired/tbkmini:cfarvidson
+    util/docker_build.sh bastardkb/tbkmini:cfarvidson
 
-TBK mini (Hotswap) WIP:
+TBK mini (Hotswap) (Windows):
 
-    MAKEFLAGS="COL2ROW=yes" util/docker_build.sh bastardkb/tbkmini:cfarvidson
+    MAKEFLAGS="EXTRAFLAGS=-DWIN" util/docker_build.sh bastardkb/tbkmini:cfarvidson
 
 Dactyl Manuform
 
@@ -38,3 +34,23 @@ Dactyl Manuform
 Corne (with elite-c)
 
     MAKEFLAGS="ELITE_C=yes" util/docker_build.sh crkbd/rev1/common:cfarvidson
+
+## Beta
+
+TBK mini (Hotswap):
+
+    util/docker_build.sh bastardkb/tbkmini:cfarvidson
+
+TBK mini (Hotswap) (Windows):
+
+    MAKEFLAGS="EXTRAFLAGS=-DWIN" util/docker_build.sh bastardkb/tbkmini:cfarvidson
+
+## Old/should be deleted later
+
+TBK mini (Handwired):
+
+    util/docker_build.sh handwired/tbkmini:cfarvidson
+
+TBK mini (Hotswap):
+
+    MAKEFLAGS="ELITE_C=yes" util/docker_build.sh handwired/tbkmini:cfarvidson

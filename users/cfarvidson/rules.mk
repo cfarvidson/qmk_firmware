@@ -33,3 +33,8 @@ COL2ROW ?= no
 ifeq ($(strip $(COL2ROW)), yes)
 	COL2ROW = yes
 endif
+
+WIN ?= no
+ifeq ($(strip $(WIN)), yes)
+	WIN = yes
+endif

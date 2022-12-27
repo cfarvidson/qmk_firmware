@@ -1,5 +1,12 @@
 #include QMK_KEYBOARD_H
+
+#if MAC > 0
 #include "keymap_swedish_osx_iso.h"
+#endif
+
+#if MAC < 1
+#include "keymap_swedish.h"
+#endif
 
 #define _BASE 0
 #define _NAV 1
