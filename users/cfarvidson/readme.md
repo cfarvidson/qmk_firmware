@@ -43,7 +43,11 @@ TBK mini (Hotswap):
 
 TBK mini (Hotswap) (Windows):
 
-    MAKEFLAGS="EXTRAFLAGS=-DWIN" util/docker_build.sh bastardkb/tbkmini:cfarvidson
+    MAKEFLAGS="EXTRAFLAGS=-DWIN" util/docker_build.sh bastardkb/tbkmini:cfarvidson && mv bastardkb_tbkmini_cfarvidson{,_win}.hex
+
+TBK mini (Hotswap) (Mac):
+
+    util/docker_build.sh bastardkb/tbkmini:cfarvidson && mv bastardkb_tbkmini_cfarvidson{,_mac}.hex
 
 ## Old/should be deleted later
 
