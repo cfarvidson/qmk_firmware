@@ -114,7 +114,7 @@ static uint16_t auto_pointer_layer_timer = 0;
 #define TAB LT(_SYM,KC_TAB)
 #define BSPC LT(_NUM,KC_BSPC)
 #define DEL LT(_FUN,KC_DEL)
-#define ENTER LT(LAYER_POINTER,KC_ENTER)
+#define ENTER LT(_MEDIA,KC_ENTER)
 #define SPACE LT(_NAV, KC_SPACE)
 #define ESCAPE LT(LAYER_POINTER, KC_ESCAPE)
 
