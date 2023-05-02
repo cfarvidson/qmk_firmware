@@ -111,13 +111,6 @@ static uint16_t auto_pointer_layer_timer = 0;
 #    endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD
 #endif     // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 
-#define TAB LT(_SYM,KC_TAB)
-#define BSPC LT(_NUM,KC_BSPC)
-#define DEL LT(_FUN,KC_DEL)
-#define ENTER LT(_MEDIA,KC_ENTER)
-#define SPACE LT(_NAV, KC_SPACE)
-#define ESCAPE LT(LAYER_POINTER, KC_ESCAPE)
-
 #ifndef POINTING_DEVICE_ENABLE
 #    define DRGSCRL KC_NO
 #    define DPI_MOD KC_NO
@@ -135,10 +128,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        KC_LSFT,    HC_A,    HC_S,    HC_D,    HC_F,    KC_G,       KC_H,    HC_J,    HC_K,    HC_L, HC_ODIA, SE_ADIA,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
-       KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  SE_DOT , SE_MINS, KC_LALT,
+       DRGSCRL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  SE_DOT , SE_MINS, KC_LALT,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                                      TAB,    BSPC,     DEL,      ENTER,  SPACE,
-                                           KC_BTN1, KC_BTN2,     ESCAPE
+            LT(_SYM,KC_TAB),LT(_NUM,KC_BSPC),LT(_FUN,KC_DEL),  LT(_MEDIA,KC_ENTER), LT(_NAV, KC_SPACE),
+                                           KC_BTN1, KC_BTN2,   LT(LAYER_POINTER, KC_ESCAPE)
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
@@ -219,7 +212,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_FUN] = LAYOUT(
   // ╭──────────────────────────────────────────────────────╮ ╭──────────────────────────────────────────────────────╮
-        RESETS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+       XXXXXXX, QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,   KC_F7,   KC_F8,   KC_F9, SE_ARNG, XXXXXXX,
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
