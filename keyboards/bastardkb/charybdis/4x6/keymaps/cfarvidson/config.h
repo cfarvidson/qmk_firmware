@@ -40,5 +40,11 @@
 
 // default but used in macros
 #undef TAPPING_TERM
-#define TAPPING_TERM 190
+#define TAPPING_TERM 175
 #define TAPPING_TERM_PER_KEY
+
+// Prevent normal rollover on alphas from accidentally triggering mods.
+#define IGNORE_MOD_TAP_INTERRUPT
+
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
+#define TAPPING_FORCE_HOLD
