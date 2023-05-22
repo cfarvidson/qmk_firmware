@@ -235,8 +235,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // ├──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────┤
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   // ╰──────────────────────────────────────────────────────┤ ├──────────────────────────────────────────────────────╯
-                             LGUI(KC_GRV), KC_BTN4, KC_BTN5,    XXXXXXX, XXXXXXX,
-                                           XXXXXXX, XXXXXXX,    XXXXXXX
+                             LGUI(KC_GRV), XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX,
+                                           KC_BTN4, KC_BTN5,    XXXXXXX
   //                            ╰───────────────────────────╯ ╰──────────────────╯
   ),
 
