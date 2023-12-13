@@ -48,3 +48,10 @@
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define QUICK_TAP_TERM 0
+
+/* keyboard config windows and mac */
+#define MAC 1
+#if defined(WIN)
+#    undef MAC
+#    define MAC 0
+#endif

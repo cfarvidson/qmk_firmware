@@ -15,7 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "keymap_swedish_pro_mac_iso.h"
+// import the correct keymap
+#if MAC > 0
+     #include "keymap_swedish_pro_mac_iso.h"
+#endif
+
+#if MAC < 1
+     #include "keymap_swedish.h"
+#endif
 
 #ifdef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 #    include "timer.h"
@@ -40,15 +47,21 @@ enum combos {
   ZV_SELECT_ALL,
 };
 
-#define HC_A LGUI_T(KC_A)
+#if MAC > 0
+     #define HC_A LGUI_T(KC_A)
+     #define HC_ODIA RGUI_T(SE_ODIA)
+#endif
+#if MAC < 1
+     #define HC_A LCTL_T(KC_A)
+     #define HC_ODIA RCTL_T(SE_ODIA)
+#endif
+
 #define HC_S LALT_T(KC_S)
 #define HC_D LCTL_T(KC_D)
 #define HC_F RSFT_T(KC_F)
-
 #define HC_J RSFT_T(KC_J)
 #define HC_K RCTL_T(KC_K)
 #define HC_L RALT_T(KC_L)
-#define HC_ODIA RGUI_T(SE_ODIA)
 #define CC_Q LT(_Q,KC_Q)
 
 // Hands down combos https://sites.google.com/alanreiser.com/handsdown/home#h.aplo097wq6hh
