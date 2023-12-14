@@ -50,10 +50,22 @@ enum combos {
 #if MAC > 0
      #define HC_A LGUI_T(KC_A)
      #define HC_ODIA RGUI_T(SE_ODIA)
+     // combos
+     #define HC_CUT LGUI(KC_X)
+     #define HC_COPY LGUI(KC_C)
+     #define HC_PASTE LGUI(KC_V)
+     #define HC_PASTE_MATCH_ALL LGUI(LSA(KC_V))
+     #define HC_SELECT_ALL LGUI(LSA(KC_V))
 #endif
 #if MAC < 1
      #define HC_A LCTL_T(KC_A)
      #define HC_ODIA RCTL_T(SE_ODIA)
+     // combos
+     #define HC_CUT LCTL(KC_X)
+     #define HC_COPY LCTL(KC_C)
+     #define HC_PASTE LCTL(KC_V)
+     #define HC_PASTE_MATCH_ALL LGUI(LSA(KC_V))
+     #define HC_SELECT_ALL LGUI(LSA(KC_V))
 #endif
 
 #define HC_S LALT_T(KC_S)
@@ -72,11 +84,11 @@ const uint16_t PROGMEM paste_match_combo[] = {KC_X, KC_V, COMBO_END};
 const uint16_t PROGMEM select_all_combo[] = {KC_Z, KC_V, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-[ZC_CUT] = COMBO(cut_combo, LGUI(KC_X)),
-[XC_COPY] = COMBO(copy_combo, LGUI(KC_C)),
-[CV_PASTE] = COMBO(paste_combo, LGUI(KC_V)),
-[XV_PASTE_MATCH] = COMBO(paste_match_combo, LGUI(LSA(KC_V))),
-[ZV_SELECT_ALL] = COMBO(select_all_combo, LGUI(KC_A)),
+[ZC_CUT] = COMBO(cut_combo, HC_CUT),
+[XC_COPY] = COMBO(copy_combo, HC_COPY),
+[CV_PASTE] = COMBO(paste_combo, HC_PASTE),
+[XV_PASTE_MATCH] = COMBO(paste_match_combo, HC_PASTE_MATCH_ALL),
+[ZV_SELECT_ALL] = COMBO(select_all_combo, HC_SELECT_ALL),
 };
 
 #define SHIFT_TAPPING_TERM 135
