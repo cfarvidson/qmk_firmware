@@ -55,3 +55,5 @@
 #    undef MAC
 #    define MAC 0
 #endif
+
+#define CHARYBDIS_DRAGSCROLL_REVERSE_Y
