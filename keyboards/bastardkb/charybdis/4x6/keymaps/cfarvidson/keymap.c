@@ -59,7 +59,7 @@ enum combos {
      #define HC_COPY LGUI(KC_C)
      #define HC_PASTE LGUI(KC_V)
      #define HC_PASTE_MATCH_ALL LGUI(LSA(KC_V))
-     #define HC_SELECT_ALL LGUI(KC_A))
+     #define HC_SELECT_ALL LGUI(KC_A)
      
 #endif
 #if MAC < 1
