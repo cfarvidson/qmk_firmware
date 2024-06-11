@@ -1,4 +1,4 @@
 VIA_ENABLE = no
 
 COMBO_ENABLE = yes
-AUTO_SHIFT_ENABLE = yes # Auto Shift
+AUTO_SHIFT_ENABLE = no # Auto Shift
