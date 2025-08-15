@@ -1,7 +1,7 @@
 /* Userspace keymap for Planck rev7 - moved from keyboards/planck/rev7/keymaps/cfarvidson2025/keymap.c */
 
 #include QMK_KEYBOARD_H
-#include "keymap_swedish_pro_mac_ansi.h"
+#include "keymap_swedish_pro_mac_iso.h"
 #include "flow_tap.h"
 #include "combos_shared.h"
 #include "tapping_shared.h"
