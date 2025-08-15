@@ -1,6 +1,5 @@
 # Userspace rules for cfarvidson
 
-
 COMBO_ENABLE = yes
 
 VIA_ENABLE = no
