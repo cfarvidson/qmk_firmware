@@ -7,3 +7,8 @@ Build:
 -   Planck rev7: `make planck/rev7:cfarvidson`
 -   Charybdis 4x6: `make bastardkb/charybdis/4x6/v2/splinky_3:cfarvidson`
 -   TBK Mini: `make bastardkb/tbkmini/v2/handwired_elite_c:cfarvidson`
+
+## TODO
+
+-   [ ] Dactyl Manuform
+-   [ ] The split
