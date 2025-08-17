@@ -16,6 +16,5 @@
  */
 
  #pragma once
- 
- #undef MASTER_RIGHT
- #define MASTER_LEFT
+
+ #define EE_HANDS

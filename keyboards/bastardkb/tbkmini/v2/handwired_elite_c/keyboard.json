@@ -9,21 +9,16 @@
         "extrakey": true,
         "rgb_matrix": false
     },
-    "ws2812": {
-        "pin": "D3"
-    },
-    "rgb_matrix": {
-        "driver": "ws2812"
-    },
+
     "matrix_pins": {
-        "cols": ["F6", "F5", "B6", "D7", "E6", "B4"],
-        "rows": ["F7", "C6", "D4", "B5"]
+        "cols": ["B4", "E6", "C6", "B1", "B3", "B2"],
+        "rows": ["B5", "F7", "F6", "B6"]
     },
     "diode_direction": "COL2ROW",
     "split": {
         "enabled": true,
         "serial": {
-            "pin": "D2"
+            "pin": "D0"
         }
     },
     "processor": "atmega32u4",
