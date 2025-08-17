@@ -33,6 +33,7 @@ combo_t key_combos[COMBO_COUNT] = {
 [ZV_SELECT_ALL] = COMBO(select_all_combo, LGUI(KC_A)),
 };
 
+#define CC_Q LT(_Q, KC_Q)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
