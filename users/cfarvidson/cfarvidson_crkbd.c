@@ -4,6 +4,25 @@
 #include "combos_shared.h"
 #include "tapping_shared.h"
 
+// clang-format off
+#define LAYOUT_split_3x6_3_wrapper( \
+  L00, L01, L02, L03, L04, L05,           R00, R01, R02, R03, R04, R05, \
+  L10, L11, L12, L13, L14, L15,           R10, R11, R12, R13, R14, R15, \
+  L20, L21, L22, L23, L24, L25,           R20, R21, R22, R23, R24, R25, \
+                      L30, L31, L32, R30, R31, R32 \
+  ) \
+  { \
+    { L00, L01, L02, L03, L04, L05 }, \
+    { L10, L11, L12, L13, L14, L15 }, \
+    { L20, L21, L22, L23, L24, L25 }, \
+    { KC_NO, KC_NO, KC_NO, L30, L31, L32 }, \
+    { R05, R04, R03, R02, R01, R00 }, \
+    { R15, R14, R13, R12, R11, R10 }, \
+    { R25, R24, R23, R22, R21, R20 }, \
+    { KC_NO, KC_NO, KC_NO, R32, R31, R30 } \
+  }
+
+
 
 enum crkbd_layers { _BASE, _NAV, _MOUSE, _MEDIA, _NUM, _SYM, _FUN, _Q };
 
@@ -24,7 +43,7 @@ combo_t key_combos[COMBO_COUNT] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_BASE] = LAYOUT_split_3x6_3(
+  [_BASE] = LAYOUT_split_3x6_3_wrapper(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
     KC_ESCAPE,    CC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SE_ARNG,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -37,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   ),
 
-  [_NAV] = LAYOUT_split_3x6_3(
+  [_NAV] = LAYOUT_split_3x6_3_wrapper(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, KC_PGUP, KC_HOME,   KC_UP, KC_END,KC_INSERT,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -49,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [_MOUSE] = LAYOUT_split_3x6_3(
+  [_MOUSE] = LAYOUT_split_3x6_3_wrapper(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, KC_WH_D, KC_WH_R, KC_MS_U, KC_WH_L, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -61,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [_MEDIA] = LAYOUT_split_3x6_3(
+  [_MEDIA] = LAYOUT_split_3x6_3_wrapper(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, KC_BRIU, XXXXXXX,KC_VOLU, XXXXXXX, XXXXXXX,                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   QK_BOOT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -73,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [_NUM] = LAYOUT_split_3x6_3(
+  [_NUM] = LAYOUT_split_3x6_3_wrapper(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, HYPR(KC_1),                   SE_DIAE,    KC_7,    KC_8,    KC_9, SE_ACUT, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -85,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [_SYM] = LAYOUT_split_3x6_3(
+  [_SYM] = LAYOUT_split_3x6_3_wrapper(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      SE_LABK, SE_AT  , SE_LPRN, SE_RPRN, SE_HASH, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -97,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [_FUN] = LAYOUT_split_3x6_3(
+  [_FUN] = LAYOUT_split_3x6_3_wrapper(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX,   QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX,   KC_F7,   KC_F8,   KC_F9, SE_ARNG, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -109,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
   ),
 
-  [_Q] = LAYOUT_split_3x6_3(
+  [_Q] = LAYOUT_split_3x6_3_wrapper(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|

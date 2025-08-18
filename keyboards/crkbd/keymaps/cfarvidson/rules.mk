@@ -18,3 +18,5 @@ AUDIO_SUPPORTED = no
 RGB_MATRIX_SUPPORTED = no
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no       # Enable keyboard RGB underglow
+
+SPLIT_KEYBOARD = yes
