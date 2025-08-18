@@ -12,4 +12,3 @@ Build:
 ## TODO
 
 -   [ ] Dactyl Manuform
--   [ ] The split
