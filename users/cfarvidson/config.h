@@ -27,7 +27,7 @@
 
 /* Per-key tap-term helpers used across keymaps */
 #ifndef SHIFT_TAPPING_TERM
-#    define SHIFT_TAPPING_TERM 200
+#    define SHIFT_TAPPING_TERM 145
 #endif
 #ifndef ALT_TAPPING_TERM
 #    define ALT_TAPPING_TERM 300
