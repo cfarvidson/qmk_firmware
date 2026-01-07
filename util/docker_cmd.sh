@@ -6,6 +6,24 @@ errcho() {
 	echo "$@" >&2
 }
 
+needs_flashing_support() {
+	# Detect whether the command will attempt to access USB devices from inside the container.
+	#
+	# This is required for flashing (e.g. `make ...:flash` or `qmk flash`) but not for compilation.
+	for arg in "$@"; do
+		case "$arg" in
+			*":flash"*|flash) return 0 ;;
+		esac
+	done
+
+	# Handle `qmk flash ...`
+	if [ "$1" = "qmk" ] && [ "$2" = "flash" ]; then
+		return 0
+	fi
+
+	return 1
+}
+
 USAGE="Usage: $0 <command>"
 
 # Check preconditions
@@ -35,16 +53,17 @@ if [ -z "$RUNTIME" ]; then
 fi
 
 # If SKIP_FLASHING_SUPPORT is defined, do not check for docker-machine and do not run a privileged container
-if [ -z "$SKIP_FLASHING_SUPPORT" ]; then
-  # IF we are using docker on non Linux and docker-machine isn't working print an error
-  # ELSE set usb_args
-  if [ ! "$(uname)" = "Linux" ] && [ "$RUNTIME" = "docker" ] && ! docker-machine active >/dev/null 2>&1; then
-    errcho "Error: target requires docker-machine to work on your platform"
-    errcho "See http://gw.tnode.com/docker/docker-machine-with-usb-support-on-windows-macos"
-    exit 3
-  else
-    usb_args="--privileged -v /dev:/dev"
-  fi
+if [ -z "$SKIP_FLASHING_SUPPORT" ] && needs_flashing_support "$@"; then
+	# IF we are using docker on non Linux and docker-machine isn't working print an error
+	# ELSE set usb_args
+	if [ ! "$(uname)" = "Linux" ] && [ "$RUNTIME" = "docker" ] && ! docker-machine active >/dev/null 2>&1; then
+		errcho "Error: flashing requires docker-machine to work on your platform"
+		errcho "For build-only, re-run with: SKIP_FLASHING_SUPPORT=1 $0 <command>"
+		errcho "See http://gw.tnode.com/docker/docker-machine-with-usb-support-on-windows-macos"
+		exit 3
+	else
+		usb_args="--privileged -v /dev:/dev"
+	fi
 fi
 
 qmk_firmware_dir=$(pwd -W 2>/dev/null) || qmk_firmware_dir=$PWD  # Use Windows path if on Windows
@@ -65,8 +84,14 @@ if [ "$RUNTIME" = "docker" ]; then
 	uid_arg="--user $(id -u):$(id -g)"
 fi
 
+# Only allocate a TTY when we're actually running in a TTY (CI/automation often isn't).
+tty_args="-it"
+if [ ! -t 0 ] || [ ! -t 1 ]; then
+	tty_args=""
+fi
+
 # Run container and build firmware
-"$RUNTIME" run --rm -it \
+"$RUNTIME" run --rm $tty_args \
 	$usb_args \
 	$uid_arg \
 	-w /qmk_firmware \
