@@ -66,6 +66,16 @@
 #    define NO_ACTION_ONESHOT
 #    define COMBO_COUNT 5
 
+/* Bootmagic Lite: hold a key on power-up to reset EEPROM-valid state and jump to bootloader.
+ * We use the two "corner" positions that are set to XXXXXXX in the keymap:
+ * - left master:  top-left corner  -> matrix [0,0]
+ * - right master: top-right corner -> matrix [5,0]
+ */
+#    define BOOTMAGIC_LITE_ROW 0
+#    define BOOTMAGIC_LITE_COLUMN 0
+#    define BOOTMAGIC_LITE_ROW_RIGHT 5
+#    define BOOTMAGIC_LITE_COLUMN_RIGHT 0
+
 /* OS selection for Charybdis keymap logic */
 #    ifndef MAC
 #        define MAC 1
