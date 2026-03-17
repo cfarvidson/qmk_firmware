@@ -83,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_ESC,    HC_A,    HC_S,    HC_D,    HC_F,    KC_G,       KC_H,    HC_J,    HC_K,    HC_L, HC_ODIA, SE_ADIA,
        DRGSCRL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  SE_DOT , SE_MINS, KC_LALT,
             LT(_SYM,KC_TAB),LT(_NUM,KC_BSPC),LT(_FUN,KC_DEL),  LT(_MEDIA,KC_ENTER), LT(_NAV, KC_SPACE),
-                                           KC_BTN1, KC_BTN2,   LT(LAYER_POINTER, KC_ESCAPE)
+                                           KC_BTN1, KC_BTN2,   LT(LAYER_POINTER, KC_BTN3)
   ),
 
   [_NAV] = LAYOUT(
