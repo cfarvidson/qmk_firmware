@@ -30,7 +30,7 @@ combo_t key_combos[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT_planck_grid(
-      XXXXXXX,    CC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SE_ARNG,
+      HC_ORBIT,    CC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SE_ARNG,
     KC_ESCAPE,    HC_A,    HC_S,    HC_D,    HC_F,    KC_G,                         KC_H,    HC_J,    HC_K,    HC_L, HC_ODIA, SE_ADIA,
       XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM, SE_DOT , SE_MINS, XXXXXXX,
       XXXXXXX, XXXXXXX, XXXXXXX, LT(_SYM,KC_TAB),LT(_NUM,KC_BSPC),LT(_FUN,KC_DEL),   LT(_MEDIA,KC_ENTER),LT(_NAV, KC_SPC),LT(_MOUSE, KC_ESCAPE), XXXXXXX, XXXXXXX, XXXXXXX
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX, KC_WH_D, KC_WH_R, KC_MS_U, KC_WH_L, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
       XXXXXXX, KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX,                      XXXXXXX, KC_RSFT,KC_RCTL, KC_RALT, KC_RGUI, XXXXXXX,
       XXXXXXX, KC_BTN4, XXXXXXX, XXXXXXX, KC_BTN5, XXXXXXX,                      XXXXXXX, KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, XXXXXXX,
-      XXXXXXX, XXXXXXX, XXXXXXX,  KC_BTN3, KC_BTN1, KC_BTN2,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX 
+      XXXXXXX, XXXXXXX, XXXXXXX,  KC_BTN3, KC_BTN1, KC_BTN2,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 
 [_MEDIA] = LAYOUT_planck_grid(
@@ -85,5 +85,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       XXXXXXX, XXXXXXX, XXXXXXX, LGUI(KC_GRV), XXXXXXX, XXXXXXX,                 XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 };
-
-

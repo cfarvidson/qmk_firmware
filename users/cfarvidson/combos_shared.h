@@ -12,4 +12,4 @@ static const uint16_t PROGMEM paste_combo[] = {KC_C, KC_V, COMBO_END};
 static const uint16_t PROGMEM paste_match_combo[] = {KC_X, KC_V, COMBO_END};
 static const uint16_t PROGMEM select_all_combo[] = {KC_Z, KC_V, COMBO_END};
 
-
+#define HC_ORBIT LSG(KC_SPC)
