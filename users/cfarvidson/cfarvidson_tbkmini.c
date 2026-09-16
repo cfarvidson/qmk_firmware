@@ -1,4 +1,5 @@
 #include QMK_KEYBOARD_H
+#include "cfarvidson.h"
 #include "keymap_swedish_pro_mac_iso.h"
 #include "flow_tap.h"
 #include "combos_shared.h"
@@ -21,8 +22,6 @@ LAYOUT_split_3x6_3( \
 
 enum tbkmini_layers { _BASE, _NAV, _MOUSE, _MEDIA, _NUM, _SYM, _FUN, _Q };
 
-enum cfarvidson_keycodes { AP_GLOB = SAFE_RANGE };
-
 #ifndef COMBO_COUNT
 #    define COMBO_COUNT 5
 #endif
@@ -36,16 +35,6 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 #define CC_Q LT(_Q, KC_Q)
-
-/* Apple Globe (fn) key: macOS treats consumer usage "AC Next Keyboard Layout Select" as Globe */
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case AP_GLOB:
-            host_consumer_send(record->event.pressed ? AC_NEXT_KEYBOARD_LAYOUT_SELECT : 0);
-            return false;
-    }
-    return true;
-}
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

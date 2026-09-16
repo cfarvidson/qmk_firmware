@@ -1,6 +1,7 @@
 /* Userspace keymap for Dactyl-Manuform 5x6 - mirrors other keyboards in this userspace */
 
 #include QMK_KEYBOARD_H
+#include "cfarvidson.h"
 #include "keymap_swedish_pro_mac_iso.h"
 #include "flow_tap.h"
 #include "combos_shared.h"
@@ -8,22 +9,10 @@
 
 enum dmf_layers { _BASE, _NAV, _MOUSE, _MEDIA, _NUM, _SYM, _FUN, _Q };
 
-enum cfarvidson_keycodes { AP_GLOB = SAFE_RANGE };
-
 /* Using shared SHIFT/ALT tapping terms from userspace config.h */
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     return userspace_tapping_term_common(keycode);
-}
-
-/* Apple Globe (fn) key: macOS treats consumer usage "AC Next Keyboard Layout Select" as Globe */
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case AP_GLOB:
-            host_consumer_send(record->event.pressed ? AC_NEXT_KEYBOARD_LAYOUT_SELECT : 0);
-            return false;
-    }
-    return true;
 }
 
 #ifndef COMBO_COUNT

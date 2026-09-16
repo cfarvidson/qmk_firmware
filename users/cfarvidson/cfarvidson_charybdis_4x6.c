@@ -1,6 +1,7 @@
 /* Userspace keymap for BastardKB Charybdis 4x6 - moved from keyboards/bastardkb/charybdis/4x6/keymaps/cfarvidson/keymap.c */
 
 #include QMK_KEYBOARD_H
+#include "cfarvidson.h"
 #include "flow_tap.h"
 #include "combos_shared.h"
 #include "tapping_shared.h"
@@ -18,8 +19,6 @@
 #endif
 
 enum charybdis_keymap_layers { _BASE = 0, _NAV, LAYER_POINTER, _MEDIA, _NUM, _SYM, _FUN, _Q };
-
-enum cfarvidson_keycodes { AP_GLOB = SAFE_RANGE };
 
 #if MAC > 0
 #    define HC_A LGUI_T(KC_A)
@@ -65,16 +64,6 @@ combo_t key_combos[COMBO_COUNT] = {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     return userspace_tapping_term_common(keycode);
-}
-
-/* Apple Globe (fn) key: macOS treats consumer usage "AC Next Keyboard Layout Select" as Globe */
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case AP_GLOB:
-            host_consumer_send(record->event.pressed ? AC_NEXT_KEYBOARD_LAYOUT_SELECT : 0);
-            return false;
-    }
-    return true;
 }
 
 

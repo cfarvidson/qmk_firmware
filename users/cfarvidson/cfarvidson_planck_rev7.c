@@ -1,13 +1,14 @@
 /* Userspace keymap for Planck rev7 - moved from keyboards/planck/rev7/keymaps/cfarvidson2025/keymap.c */
 
 #include QMK_KEYBOARD_H
+#include "cfarvidson.h"
 #include "keymap_swedish_pro_mac_iso.h"
 #include "flow_tap.h"
 #include "combos_shared.h"
 #include "tapping_shared.h"
 
 enum planck_layers { _BASE, _NAV, _MOUSE, _MEDIA, _NUM, _SYM, _FUN, _Q };
-enum planck_keycodes { PLOVER = SAFE_RANGE, BACKLIT, EXT_PLV, AP_GLOB };
+enum planck_keycodes { PLOVER = USER_SAFE_RANGE, BACKLIT, EXT_PLV };
 
 /* Using shared SHIFT/ALT tapping terms from userspace config.h */
 
@@ -16,16 +17,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         return ALT_TAPPING_TERM;
     }
     return userspace_tapping_term_common(keycode);
-}
-
-/* Apple Globe (fn) key: macOS treats consumer usage "AC Next Keyboard Layout Select" as Globe */
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case AP_GLOB:
-            host_consumer_send(record->event.pressed ? AC_NEXT_KEYBOARD_LAYOUT_SELECT : 0);
-            return false;
-    }
-    return true;
 }
 
 combo_t key_combos[] = {

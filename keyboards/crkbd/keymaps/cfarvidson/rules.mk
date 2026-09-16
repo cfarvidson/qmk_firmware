@@ -20,6 +20,3 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no       # Enable keyboard RGB underglow
 
 SPLIT_KEYBOARD = yes
-
-# Needed for the Apple Globe key (AP_GLOB) to be recognised by macOS
-KEYBOARD_SHARED_EP = yes
