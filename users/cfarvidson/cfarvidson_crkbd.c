@@ -26,6 +26,8 @@
 
 enum crkbd_layers { _BASE, _NAV, _MOUSE, _MEDIA, _NUM, _SYM, _FUN, _Q };
 
+enum cfarvidson_keycodes { AP_GLOB = SAFE_RANGE };
+
 #ifndef COMBO_COUNT
 #    define COMBO_COUNT 5
 #endif
@@ -40,6 +42,16 @@ combo_t key_combos[COMBO_COUNT] = {
 
 #define CC_Q LT(_Q, KC_Q)
 
+/* Apple Globe (fn) key: macOS treats consumer usage "AC Next Keyboard Layout Select" as Globe */
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case AP_GLOB:
+            host_consumer_send(record->event.pressed ? AC_NEXT_KEYBOARD_LAYOUT_SELECT : 0);
+            return false;
+    }
+    return true;
+}
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -49,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
     KC_ESCAPE,    HC_A,    HC_S,    HC_D,    HC_F,    KC_G,                         KC_H,    HC_J,    HC_K,    HC_L, HC_ODIA, SE_ADIA,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM, SE_DOT , SE_MINS, XXXXXXX,
+      AP_GLOB,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM, SE_DOT , SE_MINS, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                    LT(_SYM,KC_TAB),LT(_NUM,KC_BSPC),LT(_FUN,KC_DEL),   LT(_MEDIA,KC_ENTER),LT(_NAV, KC_SPACE),LT(_MOUSE, KC_ESCAPE)
                                       //`--------------------------'  `--------------------------'

@@ -7,7 +7,7 @@
 #include "tapping_shared.h"
 
 enum planck_layers { _BASE, _NAV, _MOUSE, _MEDIA, _NUM, _SYM, _FUN, _Q };
-enum planck_keycodes { PLOVER = SAFE_RANGE, BACKLIT, EXT_PLV };
+enum planck_keycodes { PLOVER = SAFE_RANGE, BACKLIT, EXT_PLV, AP_GLOB };
 
 /* Using shared SHIFT/ALT tapping terms from userspace config.h */
 
@@ -16,6 +16,16 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         return ALT_TAPPING_TERM;
     }
     return userspace_tapping_term_common(keycode);
+}
+
+/* Apple Globe (fn) key: macOS treats consumer usage "AC Next Keyboard Layout Select" as Globe */
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case AP_GLOB:
+            host_consumer_send(record->event.pressed ? AC_NEXT_KEYBOARD_LAYOUT_SELECT : 0);
+            return false;
+    }
+    return true;
 }
 
 combo_t key_combos[] = {
@@ -32,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT_planck_grid(
       HC_ORBIT,    CC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SE_ARNG,
     KC_ESCAPE,    HC_A,    HC_S,    HC_D,    HC_F,    KC_G,                         KC_H,    HC_J,    HC_K,    HC_L, HC_ODIA, SE_ADIA,
-      XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM, SE_DOT , SE_MINS, XXXXXXX,
+      AP_GLOB,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, SE_COMM, SE_DOT , SE_MINS, XXXXXXX,
       XXXXXXX, XXXXXXX, XXXXXXX, LT(_SYM,KC_TAB),LT(_NUM,KC_BSPC),LT(_FUN,KC_DEL),   LT(_MEDIA,KC_ENTER),LT(_NAV, KC_SPC),LT(_MOUSE, KC_ESCAPE), XXXXXXX, XXXXXXX, XXXXXXX
 ),
 

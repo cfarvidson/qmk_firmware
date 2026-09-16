@@ -19,6 +19,8 @@
 
 enum charybdis_keymap_layers { _BASE = 0, _NAV, LAYER_POINTER, _MEDIA, _NUM, _SYM, _FUN, _Q };
 
+enum cfarvidson_keycodes { AP_GLOB = SAFE_RANGE };
+
 #if MAC > 0
 #    define HC_A LGUI_T(KC_A)
 #    define HC_ODIA RGUI_T(SE_ODIA)
@@ -65,6 +67,16 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     return userspace_tapping_term_common(keycode);
 }
 
+/* Apple Globe (fn) key: macOS treats consumer usage "AC Next Keyboard Layout Select" as Globe */
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case AP_GLOB:
+            host_consumer_send(record->event.pressed ? AC_NEXT_KEYBOARD_LAYOUT_SELECT : 0);
+            return false;
+    }
+    return true;
+}
+
 
 
 #define CHARYBDIS_AUTO_SNIPING_ON_LAYER LAYER_POINTER
@@ -78,7 +90,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
-      XXXXXXX,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, XXXXXXX,
+      AP_GLOB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, XXXXXXX,
       KC_LGUI,    CC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SE_ARNG,
        KC_ESC,    HC_A,    HC_S,    HC_D,    HC_F,    KC_G,       KC_H,    HC_J,    HC_K,    HC_L, HC_ODIA, SE_ADIA,
        DRGSCRL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  SE_DOT , SE_MINS, KC_LALT,
