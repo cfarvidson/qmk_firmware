@@ -36,6 +36,9 @@ combo_t key_combos[COMBO_COUNT] = {
 
 #define CC_Q LT(_Q, KC_Q)
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    return userspace_tapping_term_common(keycode);
+}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 

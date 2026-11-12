@@ -37,7 +37,7 @@
 #define TAPPING_FORCE_HOLD
 
 /* Quick tap behavior (for Charybdis) */
-#if defined(KEYBOARD_bastardkb_charybdis_4x6)
+#if defined(KEYBOARD_bastardkb_charybdis_4x6) || defined(KEYBOARD_bastardkb_tbkmini)
 #    define QUICK_TAP_TERM 0
 #endif
 
