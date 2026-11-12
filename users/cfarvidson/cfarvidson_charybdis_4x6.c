@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       AP_GLOB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,       KC_6,    KC_7,    KC_8,    KC_9,    KC_0, XXXXXXX,
       KC_LGUI,    CC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, SE_ARNG,
        KC_ESC,    HC_A,    HC_S,    HC_D,    HC_F,    KC_G,       KC_H,    HC_J,    HC_K,    HC_L, HC_ODIA, SE_ADIA,
-       DRGSCRL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  SE_DOT , SE_MINS, KC_LALT,
+       DRGSCRL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  SE_DOT , SE_MINS, CW_TOGG,
             LT(_SYM,KC_TAB),LT(_NUM,KC_BSPC),LT(_FUN,KC_DEL),  LT(_MEDIA,KC_ENTER), LT(_NAV, KC_SPACE),
                                            KC_BTN1, KC_BTN2,   LT(LAYER_POINTER, KC_BTN3)
   ),
