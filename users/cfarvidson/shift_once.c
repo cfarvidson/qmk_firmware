@@ -12,12 +12,13 @@ static bool is_shift_hold(uint16_t keycode, keyrecord_t *record) {
     return IS_QK_MOD_TAP(keycode) && (QK_MOD_TAP_GET_MODS(keycode) & MOD_LSFT) && record->tap.count == 0;
 }
 
-static bool is_letter(uint16_t keycode) {
+static bool is_shift_once_key(uint16_t keycode) {
     switch (keycode) {
         case KC_A ... KC_Z:
         case SE_ARNG:
         case SE_ADIA:
         case SE_ODIA:
+        case SE_MINS:
             return true;
     }
     return false;
@@ -39,7 +40,7 @@ void process_shift_once(uint16_t keycode, keyrecord_t *record) {
     if (is_tap_hold(keycode) && record->tap.count == 0) {
         return;
     }
-    if (!is_letter(get_tap_keycode(keycode))) {
+    if (!is_shift_once_key(get_tap_keycode(keycode))) {
         return;
     }
     if (shift_spent) {

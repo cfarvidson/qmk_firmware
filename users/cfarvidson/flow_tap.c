@@ -14,6 +14,7 @@ bool is_flow_tap_key(uint16_t keycode) {
 		case SE_ODIA:
 		case SE_ARNG:
 		case SE_ADIA:
+		case SE_MINS:
 			return true;
 	}
 	return false;
