@@ -33,9 +33,6 @@
 #    define ALT_TAPPING_TERM 300
 #endif
 
-/* Enable rapid switch from tap to hold */
-#define TAPPING_FORCE_HOLD
-
 /* Quick tap behavior */
 #define QUICK_TAP_TERM 0
 
