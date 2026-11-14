@@ -59,6 +59,9 @@
 /* ---------------------- Charybdis-specific ------------------ */
 #if defined(KEYBOARD_bastardkb_charybdis_4x6)
 #    define NO_ACTION_ONESHOT
+#    define MASTER_RIGHT
+#    define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED 17U
+#    define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 1000U
 #    define COMBO_COUNT 5
 
 /* OS selection for Charybdis keymap logic */

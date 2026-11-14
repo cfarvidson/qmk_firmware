@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_ESC,    HC_A,    HC_S,    HC_D,    HC_F,    KC_G,       KC_H,    HC_J,    HC_K,    HC_L, HC_ODIA, SE_ADIA,
        DRGSCRL,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_N,    KC_M, KC_COMM,  SE_DOT , SE_MINS, CW_TOGG,
             LT(_SYM,KC_TAB),LT(_NUM,KC_BSPC),LT(_FUN,KC_DEL),  LT(_MEDIA,KC_ENTER), LT(_NAV, KC_SPACE),
-                                           KC_BTN1, KC_BTN2,   LT(LAYER_POINTER, KC_BTN3)
+                                           MS_BTN1, MS_BTN2,   LT(LAYER_POINTER, MS_BTN3)
   ),
 
   [_NAV] = LAYOUT(
@@ -110,8 +110,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DPI_MOD, S_D_MOD,    S_D_MOD, DPI_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
        XXXXXXX, HC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,    XXXXXXX, KC_RSFT, KC_RCTL, KC_RALT, HC_RGUI, XXXXXXX,
        XXXXXXX, _______, DRGSCRL, SNIPING,  EE_CLR, QK_BOOT,    QK_BOOT,  EE_CLR, SNIPING, DRGSCRL, _______, XXXXXXX,
-                                  KC_BTN2, KC_BTN1, KC_BTN3,    KC_BTN3, KC_BTN1,
-                                           XXXXXXX, KC_BTN2,    KC_BTN2
+                                  MS_BTN2, MS_BTN1, MS_BTN3,    MS_BTN3, MS_BTN1,
+                                           XXXXXXX, MS_BTN2,    MS_BTN2
   ),
 
     [_SYM] = LAYOUT(
@@ -147,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    HYPR(KC_H),  HYPR(KC_J), HYPR(KC_K),     HYPR(KC_L),    XXXXXXX, XXXXXXX,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    HYPR(KC_N),  HYPR(KC_M), HYPR(KC_COMMA), HYPR(KC_DOT),  XXXXXXX, XXXXXXX,
                               LGUI(KC_GRV), XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX,
-                                            KC_BTN4, KC_BTN5,    XXXXXXX
+                                            MS_BTN4, MS_BTN5,    XXXXXXX
   ),
 };
 
