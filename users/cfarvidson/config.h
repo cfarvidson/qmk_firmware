@@ -41,6 +41,7 @@
 
 /* Flow Tap settings shared */
 #define FLOW_TAP_TERM 150
+#define SPECULATIVE_HOLD
 
 /* Auto Shift */
 #define NO_AUTO_SHIFT_ALPHA
