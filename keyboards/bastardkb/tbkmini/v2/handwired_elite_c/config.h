@@ -18,3 +18,4 @@
  #pragma once
 
  #define EE_HANDS
+ #define DIODE_DIRECTION COL2ROW
